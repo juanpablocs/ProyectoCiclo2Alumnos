@@ -10,6 +10,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import forms.FormAlumno;
+import forms.FormCurso;
+
 
 public class Start extends JFrame implements ActionListener {
 
@@ -18,7 +21,8 @@ public class Start extends JFrame implements ActionListener {
 	private JMenu mnArchivo;
 	private JMenu mnMantenimiento;
 	private JMenu mnRegistro;
-	
+	private JMenuItem menuAlumno;
+	private JMenuItem menuCurso;
 	private JMenuItem mntmSalir;
 	
 	public Start() {
@@ -45,11 +49,11 @@ public class Start extends JFrame implements ActionListener {
 		mnMantenimiento = new JMenu("Mantenimiento");
 		menuProyecto.add(mnMantenimiento);
 		
-		JMenuItem menuAlumno = new JMenuItem("Alumno");
+		menuAlumno = new JMenuItem("Alumno");
 		menuAlumno.addActionListener(this);
 		mnMantenimiento.add(menuAlumno);
 		
-		JMenuItem menuCurso = new JMenuItem("Curso");
+		menuCurso = new JMenuItem("Curso");
 		menuCurso.addActionListener(this);
 		mnMantenimiento.add(menuCurso);
 		
@@ -76,7 +80,25 @@ public class Start extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		if (e.getSource() == menuAlumno) {
+			actionPerformedFormAlumno(e);
+		}
+		if (e.getSource() == menuCurso) {
+			actionPerformedFormCurso(e);
+		}
 	}
+	
+	protected void actionPerformedFormAlumno(ActionEvent arg0) {
+		FormAlumno dp = new FormAlumno();
+		dp.setLocationRelativeTo(this);
+		dp.setVisible(true);
+	}
+	
+	protected void actionPerformedFormCurso(ActionEvent arg0) {
+		FormCurso dp = new FormCurso();
+		dp.setLocationRelativeTo(this);
+		dp.setVisible(true);
+	}
+	
 
 }
