@@ -10,8 +10,14 @@ public class Alumno {
 	private int celular;
 	private int estado;
 	
-	public Alumno() {
-		// TODO Auto-generated constructor stub
+	public Alumno(int codAlumno, String nombres, String apellidos, String dni, int edad, int celular, int estado) {
+		this.codAlumno = codAlumno;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.dni = dni;
+		this.edad = edad;
+		this.celular = celular;
+		this.estado = estado;
 	}
 	
 	public int getCodAlumno() {
